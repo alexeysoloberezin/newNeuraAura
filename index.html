@@ -335,52 +335,45 @@
             </div>
         </div>
         <div class="mainBlock-video" id="videoContainer">
-            <img class="mainBlock-video-phone" src="./images/phone_2.png" alt="">
-            <img class="mainBlock-video-preview" src="./images/mainVideoPreview.jpg" id="video-play" alt="">
+            <picture>
+                <source srcset="./images/phone_2.webp" type="image/webp">
+                <img class="mainBlock-video-phone" src="./images/phone_2.png" alt="">
+            </picture>
+
+            <picture>
+                <source srcset="./images/mainVideoPreview.webp" type="image/webp">
+                <img class="mainBlock-video-preview" src="./images/mainVideoPreview.jpg" id="video-play" alt="">
+            </picture>
         </div>
+
         <script>
           window.addEventListener('load', function () {
-            const el = document.getElementById('video-play')
-            // el.addEventListener('click', () => {
-            //   const videoContainer = document.getElementById('videoContainer');
-            //   const iframe = document.createElement('iframe');
-            //   iframe.src = 'https://www.youtube.com/embed/mlyHx_hr6h8?si=P1tJi9XHuUSOZ2yc';
-            //   iframe.title = 'YouTube video player';
-            //   iframe.frameBorder = '0';
-            //   iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-            //   iframe.allowFullscreen = true;
-            //   videoContainer.appendChild(iframe);
-            //   el.remove()
-            // })
+            const el = document.getElementById('video-play');
             const videoContainer = document.getElementById('videoContainer');
-            // const iframe = document.createElement('iframe');
-            // iframe.src = 'https://www.youtube.com/embed/mlyHx_hr6h8?si=P1tJi9XHuUSOZ2yc';
-            // iframe.title = 'YouTube video player';
-            // iframe.frameBorder = '0';
-            // iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-            // iframe.allowFullscreen = true;
-            // videoContainer.appendChild(iframe);
 
             const video = document.createElement('video');
             video.src = './images/IMG_5066.MP4';
-            // video.autoplay = true;
+            video.autoplay = true;
             video.muted = true;
             video.playsInline = true;
             video.controls = true;
-            video.poster = './images/mainVideoPreview.jpg'
+            video.poster = './images/mainVideoPreview.jpg';
 
             video.addEventListener('canplaythrough', () => {
               setTimeout(() => {
                 el.remove();
                 videoContainer.append(video);
-                video.play().catch(error => console.log('Autoplay blocked:', error)); // Запускаем воспроизведение
-              }, 1500)
+                video.play().catch(error => console.log('Autoplay blocked:', error));
+              }, 1500);
 
               videoContainer.insertAdjacentHTML('beforeend', `
-                  <div class="mainBlock-video-fon">
-                    <img src="images/videopngfon.png" alt="">
-                  </div>
-                `);
+        <div class="mainBlock-video-fon">
+          <picture>
+            <source srcset="images/videopngfon.webp" type="image/webp">
+            <img src="images/videopngfon.png" alt="">
+          </picture>
+        </div>
+      `);
             });
           });
         </script>
