@@ -226,25 +226,56 @@
         bottom: 0;
         right: 30px;
         width: 300px;
-
         aspect-ratio: 9/16;
     }
-
-    .mainBlock-video img {
+    .mainBlock-video-fon{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 650px;
+        height: 650px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+    .mainBlock-video-fon img{
         width: 100%;
+        object-fit: contain;
         height: 100%;
-        object-fit: cover;
+    }
+
+    .mainBlock-video-phone {
+        width: 320px;
+        height: 550px;
+        object-fit: contain;
+        pointer-events: none;
         border-radius: 12px;
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .mainBlock-video-preview {
+        width: 257px;
+        height: 535px;
+        transform: translate(32px, 10px);
+        z-index: 5;
+        object-fit: cover;
+        border-radius: 41px;
         position: absolute;
         top: 0;
         left: 0;
     }
 
     .mainBlock-video iframe, .mainBlock-video video {
-        width: 100%;
-        border-radius: 20px;
+        width: 257px;
+        height: 536px;
+        transform: translate(32px, 7px);
+        display: block;
+        position: relative;
+        z-index: 5;
+        border-radius: 50px;
         object-fit: cover;
-        height: 100%;
     }
 </style>
 <body>
@@ -304,7 +335,11 @@
             </div>
         </div>
         <div class="mainBlock-video" id="videoContainer">
-            <img src="./images/mainVideoPreview.jpg" id="video-play" alt="">
+            <div class="mainBlock-video-fon">
+                <img class="" src="images/videopngfon.png" alt="">
+            </div>
+            <img class="mainBlock-video-phone" src="./images/phone_2.png" alt="">
+            <img class="mainBlock-video-preview" src="./images/mainVideoPreview.jpg" id="video-play" alt="">
         </div>
         <script>
           window.addEventListener('load', function () {
@@ -330,11 +365,11 @@
             // videoContainer.appendChild(iframe);
 
             const video = document.createElement('video');
-            video.src = './images/preview_4_en.mp4';
+            video.src = './images/IMG_5066.MP4';
             // video.autoplay = true;
             video.muted = true;
             video.playsInline = true;
-            video.controls = false;
+            video.controls = true;
             video.poster = './images/mainVideoPreview.jpg'
 
             video.addEventListener('canplaythrough', () => {
