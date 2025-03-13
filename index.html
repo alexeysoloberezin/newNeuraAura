@@ -142,6 +142,10 @@
     }
     .mainBlock{
         padding-top: 70px;
+        position: relative;
+    }
+    .mainBlock .container{
+        position: relative;
     }
     .mainBlock .btn{
         margin-top: 30px;
@@ -193,6 +197,18 @@
         height: 50px;
         border-radius: 12px;
         margin-bottom: 10px;
+    }
+    .mainBlock-video{
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+        width: 300px;
+        aspect-ratio: 9/16;
+    }
+    .mainBlock-video iframe{
+        width: 100%;
+        border-radius: 20px;
+        height: 100%;
     }
 </style>
 <body>
@@ -248,6 +264,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="mainBlock-video">
+                <iframe src="https://www.youtube.com/embed/mlyHx_hr6h8?si=P1tJi9XHuUSOZ2yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </div>
