@@ -130,6 +130,25 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        @media (max-width: 1000px) {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100dvw;
+            height: 100dvh;
+            transform: translateY(-100dvh);
+            background: #0c2a3d;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 20px;
+            transition: .4s ease;
+            &.active{
+                transform: translateY(0);
+                padding-top: 100px;
+            }
+        }
     }
 
     body, * {
@@ -308,6 +327,10 @@
         left: 0;
     }
 
+    .header-logo{
+        position: relative;
+        z-index: 1002;
+    }
     .mainBlock-video-preview {
         width: 257px;
         height: 535px;
@@ -330,6 +353,130 @@
         border-radius: 50px;
         object-fit: cover;
     }
+    .burger{
+        position: relative;
+        z-index: 1004;
+        @media (min-width: 1000px) {
+            display: none;
+        }
+        svg{
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    #top-line,
+    #bottom-line,
+    #middle-line {
+        transform-box: fill-box;
+        transform-origin: center;
+    }
+
+    .burger.active svg {
+        #top-line {
+            animation: down-rotate 0.6s ease-out both;
+        }
+        #bottom-line {
+            animation: up-rotate 0.6s ease-out both;
+        }
+        #middle-line {
+            animation: hide 0.6s ease-out forwards;
+        }
+    }
+    @keyframes hide {
+        29% {
+            opacity: 1;
+        }
+        30% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @keyframes up-rotate {
+        0% {
+            animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+            transform: translateY(0px);
+        }
+        30% {
+            transform-origin: center;
+            animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateY(-10px);
+        }
+        100% {
+            transform-origin: center;
+            transform: translateY(-10px) rotate(45deg) scale(0.9);
+        }
+    }
+
+    @keyframes down-rotate {
+        0% {
+            animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+            transform: translateY(0px);
+        }
+        30% {
+            transform-origin: center;
+            animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateY(10px);
+        }
+        100% {
+            transform-origin: center;
+            transform: translateY(10px) rotate(-45deg) scale(0.9);
+        }
+    }
+
+    section{
+        margin: 70px 0;
+
+    }
+    section h2{
+        margin-bottom: 30px;
+    }
+
+    h2{
+        font-size: 44px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .speed-box{
+        position: relative;
+        border-radius: 20px;
+        padding: 50px;
+        background: #0c2a3d;
+    }
+    .speed-item{
+        display: grid;
+        margin-bottom: 10px;
+        grid-template-columns: 2fr 100px 100px;
+        gap: 10px;
+    }
+    .speed-item:nth-child(1){
+        font-weight: 600;
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+    .speed-item>div:nth-child(2), .speed-item>div:nth-child(3){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .time{
+        height: 30px;
+        padding: 2px 7px;
+        font-size: 15px;
+        background: #071a26;
+        border-radius: 50px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .speed-item>.time:last-child{
+        background: #38a8ef ;
+    }
 </style>
 <body>
 <div class="header">
@@ -344,6 +491,23 @@
                 <li><a href="#">Как проходит обучение</a></li>
                 <li><a href="#">Тарифы</a></li>
             </ul>
+            <div class="burger">
+                <svg id="hamburger" class="Header__toggle-svg" viewbox="0 0 60 40">
+                    <g stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                        <path id="top-line" d="M10,10 L50,10 Z"></path>
+                        <path id="middle-line" d="M10,20 L50,20 Z"></path>
+                        <path id="bottom-line" d="M10,30 L50,30 Z"></path>
+                    </g>
+                </svg>
+            </div>
+            <script>
+                const burger = document.querySelector('.burger')
+                const nav = document.querySelector('.header-nav')
+                burger.addEventListener('click', function () {
+                  this.classList.toggle('active')
+                  nav.classList.toggle('active')
+                })
+            </script>
         </div>
     </div>
 </div>
@@ -355,7 +519,7 @@
             </div>
             <h1>Начни зарабатывать
                 на AI-дизайне уже через
-                14 дней
+                48 часов
             </h1>
             <a href="#" class="btn">Хочу на курс</a>
 
@@ -435,10 +599,91 @@
         </script>
     </div>
 
-    <br />
-    <br />
-    <br />
-    <br />
+    <section class="speed">
+        <div class="container">
+            <h2>Как AI ускоряет работу дизайнеров</h2>
+
+            <div class="speed-box">
+                <div class="speed-item">
+                    <div>Задача</div>
+                    <div>Без AI</div>
+                    <div>С AI</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Поиск референсов (поиск вдохновения и стиля)</div>
+                    <div class="time">2 часа</div>
+                    <div class="time">10 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Генерация идей для дизайна (поиск концептов, создание мудборда)</div>
+                    <div class="time">3 часа</div>
+                    <div class="time">15 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Создание изображений и графики (Midjourney, Stable Diffusion)</div>
+                    <div class="time">4 часа</div>
+                    <div class="time">30 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Анимация статичных кадров (Runway, PicaLabs)</div>
+                    <div class="time">4 часа</div>
+                    <div class="time">30 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Генерация трендовых эффектов (нейросети для фильтров и спецэффектов)</div>
+                    <div class="time">3 часа</div>
+                    <div class="time">20 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Ретушь и удаление фона (автоматическая обработка фото)</div>
+                    <div class="time">2 часа</div>
+                    <div class="time">10 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Озвучка и генерация музыки (Suno, Eleven Labs)</div>
+                    <div class="time">5 часов</div>
+                    <div class="time">45 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Финальная сборка ролика (монтаж и экспресс-анимация)</div>
+                    <div class="time">6 часов</div>
+                    <div class="time">1 час</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Создание презентаций и графики (автоматизация в Figma, Canva)</div>
+                    <div class="time">3 часа</div>
+                    <div class="time">20 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Адаптация дизайнов под разные форматы (автоматическая подгонка макетов)</div>
+                    <div class="time">2 часа</div>
+                    <div class="time">15 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Написание текстов и сценариев для видео (ChatGPT, Claude)</div>
+                    <div class="time">4 часа</div>
+                    <div class="time">30 минут</div>
+                </div>
+
+                <div class="speed-item">
+                    <div>Генерация лендингов и UI-дизайна (Framer, Galileo AI)</div>
+                    <div class="time">5 часов</div>
+                    <div class="time">1 час</div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 </body>
 </html>
