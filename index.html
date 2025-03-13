@@ -335,9 +335,6 @@
             </div>
         </div>
         <div class="mainBlock-video" id="videoContainer">
-            <div class="mainBlock-video-fon">
-                <img class="" src="images/videopngfon.png" alt="">
-            </div>
             <img class="mainBlock-video-phone" src="./images/phone_2.png" alt="">
             <img class="mainBlock-video-preview" src="./images/mainVideoPreview.jpg" id="video-play" alt="">
         </div>
@@ -373,9 +370,17 @@
             video.poster = './images/mainVideoPreview.jpg'
 
             video.addEventListener('canplaythrough', () => {
-              el.remove();
-              videoContainer.append(video);
-              video.play().catch(error => console.log('Autoplay blocked:', error)); // Запускаем воспроизведение
+              setTimeout(() => {
+                el.remove();
+                videoContainer.append(video);
+                video.play().catch(error => console.log('Autoplay blocked:', error)); // Запускаем воспроизведение
+              }, 1500)
+
+              videoContainer.insertAdjacentHTML('beforeend', `
+                  <div class="mainBlock-video-fon">
+                    <img src="images/videopngfon.png" alt="">
+                  </div>
+                `);
             });
           });
         </script>
