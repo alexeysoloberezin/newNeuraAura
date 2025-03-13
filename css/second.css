@@ -2,7 +2,7 @@
   position: relative;
   border-radius: 20px;
   padding: 50px;
-  background: #0c2a3d;
+  background: #0a2639;
 }
 .speed-item{
   display: grid;
@@ -29,6 +29,7 @@
   border-radius: 50px;
   text-align: center;
   display: flex;
+  box-shadow: 0 0 8px rgba(56, 168, 239, 0.35);
   align-items: center;
   justify-content: center;
 }
