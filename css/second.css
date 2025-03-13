@@ -35,3 +35,67 @@
 .speed-item>.time:last-child{
   background: #38a8ef ;
 }
+
+.whatGet{
+
+}
+.whatGet-wrp{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.whatGet-el{
+  background: #fff;
+  color: #021c27;
+  padding: 20px;
+  border-radius: 20px;
+}
+.whatGet-el ul li{
+  margin-bottom: 7px;
+  font-size: 15px;
+}
+.whatGet-el ul li:before{
+  content: '';
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  background: #226e9e;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+.whatGet-tag-sec{
+  background: #000;
+  padding: 4px 10px;
+  width: fit-content;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.whatGet-title{
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.whatGet-txt{
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+.whatGet-el img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-top: 10px;
+}
+.whatGet-tag{
+  border-radius: 5px;
+  background: #226e9e;
+  width: fit-content;
+  color: #fff;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+}
+.whatGet-el:nth-child(5),
+.whatGet-el:nth-child(6) {
+  grid-column: span 2; /* Занимает 2 колонки */
+}
