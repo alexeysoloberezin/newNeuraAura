@@ -8,15 +8,17 @@
     <title>Document</title>
 </head>
 <style>
-    body{
+    body {
         background: #021c27;
         color: #fff;
     }
-    a{
+
+    a {
         color: #fff;
         display: inline-block;
         text-decoration: none;
     }
+
     @font-face {
         font-family: 'Avenir Next Cyr';
         src: url('./fonts/AvenirNextCyr-Thin.woff') format('woff');
@@ -78,54 +80,64 @@
         font: inherit;
         vertical-align: baseline;
     }
+
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure,
     footer, header, hgroup, menu, nav, section {
         display: block;
     }
+
     body {
         line-height: 1;
     }
+
     ol, ul {
         list-style: none;
     }
+
     blockquote, q {
         quotes: none;
     }
+
     blockquote:before, blockquote:after,
     q:before, q:after {
         content: '';
         content: none;
     }
+
     table {
         border-collapse: collapse;
         border-spacing: 0;
     }
-    .container{
+
+    .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 15px;
     }
-    .header{
+
+    .header {
         padding: 20px 0;
     }
-    .header-row{
+
+    .header-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    .header-nav{
+
+    .header-nav {
         display: flex;
         align-items: center;
         gap: 20px;
     }
 
-    body, *{
+    body, * {
         font-family: 'Avenir Next Cyr', sans-serif;
         line-height: 1.2;
     }
 
-    .tag{
+    .tag {
         color: #00bcbc;
         font-size: 18px;
         font-family: 'Manrope', Arial, sans-serif;
@@ -140,23 +152,29 @@
         border-style: solid;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
     }
-    .mainBlock{
+
+    .mainBlock {
         padding-top: 70px;
         position: relative;
     }
-    .mainBlock .container{
+
+    .mainBlock .container {
         position: relative;
     }
-    .mainBlock .btn{
+
+    .mainBlock .btn {
         margin-top: 30px;
     }
-    .mainBlock h1{
+
+    .mainBlock h1 {
         max-width: 600px;
     }
-    .mainBlock-wrp .tag{
+
+    .mainBlock-wrp .tag {
         margin-bottom: 20px;
     }
-    h1{
+
+    h1 {
         vertical-align: middle;
         color: #ffffff;
         font-size: 54px;
@@ -167,7 +185,8 @@
         border-color: transparent;
         border-style: solid;
     }
-    .btn{
+
+    .btn {
         color: #ffffff;
         font-size: 18px;
         line-height: 1.55;
@@ -180,32 +199,38 @@
         border-style: solid;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
     }
-    .mainBlock-tags{
+
+    .mainBlock-tags {
         background: #0c2a3d;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         border-radius: 20px;
         margin-top: 40px;
     }
-    .mainBlock-tags>div{
+
+    .mainBlock-tags > div {
         border-right: 1px solid rgba(255, 255, 255, 0.08);
         padding: 20px;
         font-size: 16px;
     }
-    .mainBlock-tags>div img{
+
+    .mainBlock-tags > div img {
         width: 50px;
         height: 50px;
         border-radius: 12px;
         margin-bottom: 10px;
     }
-    .mainBlock-video{
+
+    .mainBlock-video {
         position: absolute;
         bottom: 0;
         right: 30px;
         width: 300px;
+
         aspect-ratio: 9/16;
     }
-    .mainBlock-video img{
+
+    .mainBlock-video img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -214,97 +239,110 @@
         top: 0;
         left: 0;
     }
-    .mainBlock-video iframe{
+
+    .mainBlock-video iframe, .mainBlock-video video {
         width: 100%;
         border-radius: 20px;
+        object-fit: cover;
         height: 100%;
     }
 </style>
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header-row">
-                <div class="header-logo">
-                    NEURO AURA
-                </div>
-                <ul class="header-nav">
-                   <li><a href="#">Программа обучения</a></li>
-                   <li><a href="#">Отзывы</a></li>
-                   <li><a href="#">Как проходит обучение</a></li>
-                   <li><a href="#">Тарифы</a></li>
-                </ul>
+<div class="header">
+    <div class="container">
+        <div class="header-row">
+            <div class="header-logo">
+                NEURO AURA
             </div>
+            <ul class="header-nav">
+                <li><a href="#">Программа обучения</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Как проходит обучение</a></li>
+                <li><a href="#">Тарифы</a></li>
+            </ul>
         </div>
     </div>
-    <div class="mainBlock">
-        <div class="container">
-            <div class="mainBlock-wrp">
-                <div class="tag">
-                    Мини-курс “Нейростети для дизайна”
+</div>
+<div class="mainBlock">
+    <div class="container">
+        <div class="mainBlock-wrp">
+            <div class="tag">
+                Мини-курс “Нейростети для дизайна”
+            </div>
+            <h1>Начни зарабатывать
+                на AI-дизайне уже через
+                14 дней
+            </h1>
+            <a href="#" class="btn">Хочу на курс</a>
+            <div class="mainBlock-tags">
+                <div>
+                    <img src="./images/tag_3.png" alt="">
+                    <div>Анимируй<br/>
+                        изображения в Runway
+                    </div>
                 </div>
-                <h1>Начни зарабатывать
-                    на AI-дизайне уже через
-                    14 дней
-                </h1>
-                <a href="#" class="btn">Хочу на курс</a>
-                <div class="mainBlock-tags">
-                    <div>
-                        <img src="./images/tag_3.png" alt="">
-                        <div>Анимируй<br/>
-                            изображения в Runway</div>
+                <div>
+                    <img src="./images/tag_3.png" alt="">
+                    <div>Добавляй<br/>
+                        AI-озвучку и музыку
                     </div>
+                </div>
+                <div>
+                    <img src="./images/tag_3.png" alt="">
                     <div>
-                        <img src="./images/tag_3.png" alt="">
-                        <div>Добавляй<br/>
-                            AI-озвучку и музыку</div>
+                        Генерируй идеи <br/>
+                        и визуалы<br/>
+                        в Midjourney
                     </div>
+                </div>
+                <div>
+                    <img src="./images/tag_3.png" alt="">
                     <div>
-                        <img src="./images/tag_3.png" alt="">
-                        <div>
-                            Генерируй идеи <br/>
-                            и визуалы<br/>
-                            в Midjourney
-                        </div>
-                    </div>
-                    <div>
-                        <img src="./images/tag_3.png" alt="">
-                        <div>
-                            Собери полноценный ролик в портфолио
-                        </div>
+                        Собери полноценный ролик в портфолио
                     </div>
                 </div>
             </div>
-            <div class="mainBlock-video" id="videoContainer">
-                <img src="./images/mainVideoPreview.jpg" id="video-play" alt="">
-            </div>
-            <script>
-              window.addEventListener('load', function () {
-                const el = document.getElementById('video-play')
-                // el.addEventListener('click', () => {
-                //   const videoContainer = document.getElementById('videoContainer');
-                //   const iframe = document.createElement('iframe');
-                //   iframe.src = 'https://www.youtube.com/embed/mlyHx_hr6h8?si=P1tJi9XHuUSOZ2yc';
-                //   iframe.title = 'YouTube video player';
-                //   iframe.frameBorder = '0';
-                //   iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-                //   iframe.allowFullscreen = true;
-                //   videoContainer.appendChild(iframe);
-                //   el.remove()
-                // })
-                setTimeout(() => {
-                  const videoContainer = document.getElementById('videoContainer');
-                  const iframe = document.createElement('iframe');
-                  iframe.src = 'https://www.youtube.com/embed/mlyHx_hr6h8?si=P1tJi9XHuUSOZ2yc';
-                  iframe.title = 'YouTube video player';
-                  iframe.frameBorder = '0';
-                  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-                  iframe.allowFullscreen = true;
-                  videoContainer.appendChild(iframe);
-                  el.remove()
-                }, 1500)
-              });
-            </script>
         </div>
+        <div class="mainBlock-video" id="videoContainer">
+            <img src="./images/mainVideoPreview.jpg" id="video-play" alt="">
+        </div>
+        <script>
+          window.addEventListener('load', function () {
+            const el = document.getElementById('video-play')
+            // el.addEventListener('click', () => {
+            //   const videoContainer = document.getElementById('videoContainer');
+            //   const iframe = document.createElement('iframe');
+            //   iframe.src = 'https://www.youtube.com/embed/mlyHx_hr6h8?si=P1tJi9XHuUSOZ2yc';
+            //   iframe.title = 'YouTube video player';
+            //   iframe.frameBorder = '0';
+            //   iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            //   iframe.allowFullscreen = true;
+            //   videoContainer.appendChild(iframe);
+            //   el.remove()
+            // })
+            const videoContainer = document.getElementById('videoContainer');
+            // const iframe = document.createElement('iframe');
+            // iframe.src = 'https://www.youtube.com/embed/mlyHx_hr6h8?si=P1tJi9XHuUSOZ2yc';
+            // iframe.title = 'YouTube video player';
+            // iframe.frameBorder = '0';
+            // iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            // iframe.allowFullscreen = true;
+            // videoContainer.appendChild(iframe);
+
+            const video = document.createElement('video');
+            video.src = './images/preview_4_en.mp4';
+            video.controls = true;
+            video.autoplay = true;
+            video.muted = true;
+
+            // При загрузке видео скрываем превью и показываем видео
+            video.addEventListener('canplaythrough', () => {
+              el.remove()
+              videoContainer.append(video)
+            });
+          });
+        </script>
     </div>
+</div>
 </body>
 </html>
