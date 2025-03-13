@@ -331,14 +331,16 @@
 
             const video = document.createElement('video');
             video.src = './images/preview_4_en.mp4';
-            video.controls = true;
-            video.autoplay = true;
+            // video.autoplay = true;
             video.muted = true;
+            video.playsInline = true;
+            video.controls = false;
+            video.poster = './images/mainVideoPreview.jpg'
 
-            // При загрузке видео скрываем превью и показываем видео
             video.addEventListener('canplaythrough', () => {
-              el.remove()
-              videoContainer.append(video)
+              el.remove();
+              videoContainer.append(video);
+              video.play().catch(error => console.log('Autoplay blocked:', error)); // Запускаем воспроизведение
             });
           });
         </script>
