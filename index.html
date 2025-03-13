@@ -280,7 +280,18 @@
             <script>
               window.addEventListener('load', function () {
                 const el = document.getElementById('video-play')
-                el.addEventListener('click', () => {
+                // el.addEventListener('click', () => {
+                //   const videoContainer = document.getElementById('videoContainer');
+                //   const iframe = document.createElement('iframe');
+                //   iframe.src = 'https://www.youtube.com/embed/mlyHx_hr6h8?si=P1tJi9XHuUSOZ2yc';
+                //   iframe.title = 'YouTube video player';
+                //   iframe.frameBorder = '0';
+                //   iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                //   iframe.allowFullscreen = true;
+                //   videoContainer.appendChild(iframe);
+                //   el.remove()
+                // })
+                setTimeout(() => {
                   const videoContainer = document.getElementById('videoContainer');
                   const iframe = document.createElement('iframe');
                   iframe.src = 'https://www.youtube.com/embed/mlyHx_hr6h8?si=P1tJi9XHuUSOZ2yc';
@@ -290,7 +301,7 @@
                   iframe.allowFullscreen = true;
                   videoContainer.appendChild(iframe);
                   el.remove()
-                })
+                }, 1500)
               });
             </script>
         </div>
