@@ -472,7 +472,7 @@
             filter: blur(50px);
             opacity: .4;
         }
-        section:nth-child(2n):after {
+        section:nth-child(2n - 1):after {
             right: initial;
             left: 0;
         }
@@ -490,7 +490,7 @@
             text-align: center;
         }
         h2 span{
-            background: #38a8ef;
+            background: linear-gradient(90deg, rgba(56,168,239,0.45) 0%, rgba(142,56,239,0.45) 100%);
             color: #fff;
             padding: 4px 10px;
             display: inline-block;
@@ -870,6 +870,182 @@
             </div>
         </div>
     </section>
+
+    <div class="where">
+        <div class="container">
+            <h2>Где ты сможешь применять AI-дизайн и сколько это приносит?</h2>
+            <div class="where-wrp">
+                <div class="where-el">
+                    <div class="where-img">
+                        <img src="./images/mainVideoPreview.jpg" alt="">
+                    </div>
+                    <div class="where-title">
+                        Оформление карточек товаров без съемок, обложек товаров, баннеров, лукбуков.
+                    </div>
+                    <div class="where-tag">
+                        Экономия до 50 000 ₽ на продакшне
+                    </div>
+                    <div class="where-subtitle">Как это работает:</div>
+
+                    <ul>
+                        <li>Генерируй реалистичные товарные фотографии без фотосессий</li>
+                        <li>Создавай стильные AI-изображения для карточек Wildberries и Ozon</li>
+                        <li>Улучшай качество фото и делай профессиональную ретушь в один клик</li>
+                    </ul>
+
+                    <div class="where-price">
+                        <div>
+                            Стоимость услуг фрилансеров:
+                        </div>
+                        <div><span>1 000 ₽</span> за карточку</div>
+                    </div>
+                </div>
+
+                <div class="where-el">
+                    <div class="where-img">
+                        <img src="./images/mainVideoPreview.jpg" alt="">
+                    </div>
+                    <div class="where-title">
+                        Оформление карточек товаров без съемок, обложек товаров, баннеров, лукбуков.
+                    </div>
+                    <div class="where-tag">
+                        Экономия до 50 000 ₽ на продакшне
+                    </div>
+                    <div class="where-subtitle">Как это работает:</div>
+
+                    <ul>
+                        <li>Генерируй реалистичные товарные фотографии без фотосессий</li>
+                        <li>Создавай стильные AI-изображения для карточек Wildberries и Ozon</li>
+                        <li>Улучшай качество фото и делай профессиональную ретушь в один клик</li>
+                    </ul>
+
+                    <div class="where-price">
+                        <div>
+                            Стоимость услуг фрилансеров:
+                        </div>
+                        <div><span>1 000 ₽</span> за карточку</div>
+                    </div>
+                </div>
+
+                <div class="where-el">
+                    <div class="where-img">
+                        <img src="./images/mainVideoPreview.jpg" alt="">
+                    </div>
+                    <div class="where-title">
+                        Оформление карточек товаров без съемок, обложек товаров, баннеров, лукбуков.
+                    </div>
+                    <div class="where-tag">
+                        Экономия до 50 000 ₽ на продакшне
+                    </div>
+                    <div class="where-subtitle">Как это работает:</div>
+
+                    <ul>
+                        <li>Генерируй реалистичные товарные фотографии без фотосессий</li>
+                        <li>Создавай стильные AI-изображения для карточек Wildberries и Ozon</li>
+                        <li>Улучшай качество фото и делай профессиональную ретушь в один клик</li>
+                    </ul>
+
+                    <div class="where-price">
+                        <div>
+                            Стоимость услуг фрилансеров:
+                        </div>
+                        <div><span>1 000 ₽</span> за карточку</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="examples">
+                <h2>Примеры работ спикеров</h2>
+
+
+
+                <div class="examples-swiper">
+                    <div class="examples-swiper-preview">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+                <script>
+                  let swiperInitialized = false;
+                  const swiperPreview = document.querySelector('.examples-swiper-preview');
+                  const examplesSwiper = document.querySelector('.examples-swiper');
+                  const body = document.querySelector('body')
+
+                  body.addEventListener('scroll', function () {
+                    console.log('scroll');
+                    if (!swiperInitialized) {
+                      // Добавляем CSS
+                      const link = document.createElement('link');
+                      link.rel = 'stylesheet';
+                      link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
+                      document.head.appendChild(link);
+
+                      // Добавляем JS
+                      const script = document.createElement('script');
+                      script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
+                      script.onload = () => {
+                        // Удаляем превью
+                        console.log('examplesSwiper', examplesSwiper)
+                        if (swiperPreview) swiperPreview.remove();
+                        if(!examplesSwiper) return;
+                        // Добавляем HTML-контент Swiper
+                        examplesSwiper.insertAdjacentHTML('beforeend', `
+                          <div class="swiper examples-swiper-box">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide examples-slide">
+                                <video controls src="./images/IMG_5066.MP4"></video>
+                                </div>
+                              <div class="swiper-slide examples-slide">
+                                <video controls src="./images/IMG_5066.MP4"></video>
+                                </div>
+                                <div class="swiper-slide examples-slide">
+                                <video  controls src="./images/IMG_5066.MP4"></video>
+                                </div>
+                                 <div class="swiper-slide examples-slide">
+                                <video controls src="./images/IMG_5066.MP4"></video>
+                                </div>
+                                 <div class="swiper-slide examples-slide">
+                                <video controls src="./images/IMG_5066.MP4"></video>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                          </div>
+                        `);
+
+                        // Инициализация Swiper
+                        new Swiper('.swiper', {
+                          loop: true,
+                          slidesPerView: 4, // Позволяет отображать количество слайдов в зависимости от их ширины
+                          spaceBetween: 20,
+
+                          pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                          },
+                          navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                          },
+                        });
+                      };
+
+                      document.head.appendChild(script);
+                      swiperInitialized = true; // Блокируем повторную инициализацию
+                    }
+                  });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
 </div>
 </body>
 </html>
