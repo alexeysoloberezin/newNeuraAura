@@ -4,445 +4,499 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<style>
-    body {
-        background: #021c27;
-        color: #fff;
-    }
-    body,html{
-        max-width: 100vw;
-        width: 100%;
-    }
+    <title>Neuro Aura</title>
+    <!--    <meta de>-->
+    <style>
+        body {
+            background: #021c27;
+            color: #fff;
+        }
+        *{
+            box-sizing: border-box;
+        }
 
-    a {
-        color: #fff;
-        display: inline-block;
-        text-decoration: none;
-    }
+        body, html {
+            max-width: 100vw;
+            width: 100%;
+            overflow-x: hidden;
+        }
 
-    @font-face {
-        font-family: 'Avenir Next Cyr';
-        src: url('./fonts/AvenirNextCyr-Thin.woff') format('woff');
-        font-weight: 100;
-        font-style: normal;
-    }
+        a {
+            color: #fff;
+            display: inline-block;
+            text-decoration: none;
+        }
 
-    @font-face {
-        font-family: 'Avenir Next Cyr';
-        src: url('./fonts/AvenirNextCyr-Regula.woff') format('woff');
-        font-weight: 400;
-        font-style: normal;
-    }
+        @font-face {
+            font-family: 'Avenir Next Cyr';
+            src: url('./fonts/AvenirNextCyr-Thin.woff') format('woff');
+            font-weight: 100;
+            font-style: normal;
+        }
 
-    @font-face {
-        font-family: 'Avenir Next Cyr';
-        src: url('./fonts/AvenirNextCyr-Medium.woff') format('woff');
-        font-weight: 500;
-        font-style: normal;
-    }
+        @font-face {
+            font-family: 'Avenir Next Cyr';
+            src: url('./fonts/AvenirNextCyr-Regula.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
 
-    @font-face {
-        font-family: 'Avenir Next Cyr';
-        src: url('./fonts/AvenirNextCyr-Bold.woff') format('woff');
-        font-weight: 700;
-        font-style: normal;
-    }
+        @font-face {
+            font-family: 'Avenir Next Cyr';
+            src: url('./fonts/AvenirNextCyr-Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
 
-    @font-face {
-        font-family: 'Avenir Next Cyr';
-        src: url('./fonts/AvenirNextCyr-Heavy.woff') format('woff');
-        font-weight: 900;
-        font-style: normal;
-    }
+        @font-face {
+            font-family: 'Avenir Next Cyr';
+            src: url('./fonts/AvenirNextCyr-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Avenir Next Cyr';
+            src: url('./fonts/AvenirNextCyr-Heavy.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+        }
 
 
-    /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+        /* http://meyerweb.com/eric/tools/css/reset/
+       v2.0 | 20110126
+       License: none (public domain)
+    */
 
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed,
-    figure, figcaption, footer, header, hgroup,
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
 
-    /* HTML5 display-role reset for older browsers */
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section {
-        display: block;
-    }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
 
-    body {
-        line-height: 1;
-    }
+        body {
+            line-height: 1;
+        }
 
-    ol, ul {
-        list-style: none;
-    }
+        ol, ul {
+            list-style: none;
+        }
 
-    blockquote, q {
-        quotes: none;
-    }
+        blockquote, q {
+            quotes: none;
+        }
 
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
 
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 15px;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-    .header {
-        padding: 20px 0;
-    }
+        .header {
+            padding: 20px 0;
+        }
 
-    .header-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .header-nav {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        @media (max-width: 1000px) {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100dvw;
-            height: 100dvh;
-            transform: translateY(-100dvh);
-            background: #0c2a3d;
-            z-index: 1000;
+        .header-row {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            font-size: 20px;
-            transition: .4s ease;
-            &.active{
-                transform: translateY(0);
-                padding-top: 100px;
+            justify-content: space-between;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            @media (max-width: 1000px) {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 100dvw;
+                height: 100dvh;
+                transform: translateY(-100dvh);
+                background: #0c2a3d;
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 20px;
+                transition: .4s ease;
+                &.active {
+                    transform: translateY(0);
+                    padding-top: 100px;
+                }
             }
         }
-    }
 
-    body, * {
-        font-family: 'Avenir Next Cyr', sans-serif;
-        line-height: 1.2;
-    }
-
-    .tag {
-        color: #00bcbc;
-        font-size: 18px;
-        font-family: 'Manrope', Arial, sans-serif;
-        line-height: 1.55;
-        width: fit-content;
-        font-weight: 500;
-        padding: 8px 16px;
-        border-radius: 12px 12px 12px 12px;
-        background-color: #06333a;
-        background-position: center center;
-        border-color: transparent;
-        border-style: solid;
-        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-        @media (max-width: 500px) {
-            font-size: 16px;
+        body, * {
+            font-family: 'Avenir Next Cyr', sans-serif;
+            line-height: 1.2;
         }
-    }
 
-    .mainBlock {
-        padding-top: 70px;
-        position: relative;
-        @media (max-width: 750px) {
-            padding-top: 30px;
+        .tag {
+            color: #00bcbc;
+            font-size: 18px;
+            font-family: 'Manrope', Arial, sans-serif;
+            line-height: 1.55;
+            width: fit-content;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 12px 12px 12px 12px;
+            background-color: #06333a;
+            background-position: center center;
+            border-color: transparent;
+            border-style: solid;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            @media (max-width: 500px) {
+                font-size: 16px;
+            }
         }
-    }
 
-    .mainBlock .container {
-        position: relative;
-    }
-
-    .mainBlock .btn {
-        margin-top: 30px;
-    }
-
-    .mainBlock h1 {
-        max-width: 600px;
-        @media (max-width: 1000px) {
-            max-width: 400px;
-        }
-        @media (max-width: 750px) {
-            margin: 0 auto;
-        }
-    }
-
-    .mainBlock-wrp .tag {
-        margin-bottom: 20px;
-    }
-    .mainBlock-wrp{
-        @media (max-width: 750px) {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-
-    h1 {
-        vertical-align: middle;
-        color: #ffffff;
-        font-size: clamp(24px, 4vw, 54px);
-        line-height: 1.2;
-        font-weight: 600;
-        letter-spacing: -0.3px;
-        background-position: center center;
-        border-color: transparent;
-        border-style: solid;
-    }
-
-    .btn {
-        color: #ffffff;
-        font-size: 22px;
-        line-height: 1.55;
-        font-weight: 600;
-        padding: 20px 40px;
-        border-radius: 50px 50px 50px 50px;
-        background-color: #38a8ef;
-        box-shadow: 0 0 15px #38a8ef;
-        background-position: center center;
-        border-color: transparent;
-        border-style: solid;
-        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-        @media (max-width: 500px) {
-            font-size: 19px;
-            padding: 15px 25px;
-        }
-    }
-
-    .mainBlock-tags {
-        background: #0c2a3d;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        border-radius: 20px;
-        margin-top: 40px;
-        @media (max-width: 1000px) {
-            grid-template-columns: 1fr 1fr;
-            /*margin-top: 200px;*/
-            max-width: 50vw;
-            overflow: hidden;
-        }
-        @media (max-width: 750px) {
-            grid-template-columns: 1fr 1fr;
-            max-width: 100%;
-        }
-    }
-
-    .mainBlock-tags > div {
-        border-right: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 20px;
-        font-size: 16px;
-        @media (max-width: 1000px) {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: left;
-        }
-        @media (max-width: 500px) {
-            font-size: 14px;
-            padding: 14px;
-        }
-    }
-
-    .mainBlock-tags > div img {
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
-        margin-bottom: 10px;
-    }
-
-    .mainBlock-video {
-        position: absolute;
-        bottom: 0;
-        right: 30px;
-        width: 300px;
-        aspect-ratio: 9/16;
-        @media (max-width: 1000px) {
-            bottom: initial;
-            top: 0px;
-        }
-        @media (max-width: 750px) {
+        .mainBlock {
+            padding-top: 70px;
             position: relative;
-            margin: 20px auto;
-            transform: translateX(20px) scale(0.85);
+            @media (max-width: 750px) {
+                padding-top: 30px;
+            }
         }
-    }
-    .mainBlock-video-fon{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 650px;
-        height: 650px;
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-    }
-    .mainBlock-video-fon img{
-        width: 100%;
-        object-fit: contain;
-        height: 100%;
-    }
 
-    .mainBlock-video-phone {
-        width: 320px;
-        height: 550px;
-        object-fit: contain;
-        pointer-events: none;
-        border-radius: 12px;
-        z-index: 10;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .header-logo{
-        position: relative;
-        z-index: 1002;
-    }
-    .mainBlock-video-preview {
-        width: 257px;
-        height: 535px;
-        transform: translate(32px, 10px);
-        z-index: 5;
-        object-fit: cover;
-        border-radius: 41px;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .mainBlock-video iframe, .mainBlock-video video {
-        width: 257px;
-        height: 536px;
-        transform: translate(32px, 7px);
-        display: block;
-        position: relative;
-        z-index: 5;
-        border-radius: 50px;
-        object-fit: cover;
-    }
-    .burger{
-        position: relative;
-        z-index: 1004;
-        @media (min-width: 1000px) {
-            display: none;
+        .mainBlock .container {
+            position: relative;
         }
-        svg{
+
+        .mainBlock .btn {
+            margin-top: 30px;
+        }
+
+        .mainBlock h1 {
+            max-width: 600px;
+            @media (max-width: 1000px) {
+                max-width: 400px;
+            }
+            @media (max-width: 750px) {
+                margin: 0 auto;
+            }
+        }
+
+        .mainBlock-wrp .tag {
+            margin-bottom: 20px;
+        }
+
+        .mainBlock-wrp {
+            position: relative;
+            z-index: 10;
+            @media (max-width: 750px) {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        h1 {
+            vertical-align: middle;
+            color: #ffffff;
+            font-size: clamp(24px, 4vw, 54px);
+            line-height: 1.2;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            background-position: center center;
+            border-color: transparent;
+            border-style: solid;
+        }
+
+        .btn {
+            color: #ffffff;
+            font-size: 22px;
+            line-height: 1.55;
+            font-weight: 600;
+            padding: 15px 40px;
+            border-radius: 50px 50px 50px 50px;
+            background-color: #38a8ef;
+            box-shadow: 0 0 15px #38a8ef;
+            background-position: center center;
+            border-color: transparent;
+            border-style: solid;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+            @media (max-width: 500px) {
+                font-size: 19px;
+                padding: 15px 25px;
+            }
+        }
+
+        .mainBlock-tags {
+            background: #0c2a3d;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            border-radius: 20px;
+            margin-top: 40px;
+            @media (max-width: 1000px) {
+                grid-template-columns: 1fr 1fr;
+                /*margin-top: 200px;*/
+                max-width: 50vw;
+                overflow: hidden;
+            }
+            @media (max-width: 750px) {
+                grid-template-columns: 1fr 1fr;
+                max-width: 100%;
+            }
+        }
+
+        .mainBlock-tags > div {
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            font-size: 16px;
+            @media (max-width: 1000px) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                text-align: left;
+            }
+            @media (max-width: 500px) {
+                font-size: 14px;
+                padding: 14px;
+            }
+        }
+
+        .mainBlock-tags > div img {
             width: 50px;
             height: 50px;
+            border-radius: 12px;
+            margin-bottom: 10px;
         }
-    }
 
-    #top-line,
-    #bottom-line,
-    #middle-line {
-        transform-box: fill-box;
-        transform-origin: center;
-    }
+        .mainBlock-video {
+            position: absolute;
+            bottom: 0;
+            right: 30px;
+            width: 300px;
+            aspect-ratio: 9/16;
+            @media (max-width: 1000px) {
+                bottom: initial;
+                top: 0px;
+            }
+            @media (max-width: 750px) {
+                position: relative;
+                margin: 20px auto;
+                transform: translateX(20px) scale(0.85);
+            }
+        }
 
-    .burger.active svg {
-        #top-line {
-            animation: down-rotate 0.6s ease-out both;
+        .mainBlock-video-fon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 650px;
+            height: 650px;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 1;
         }
-        #bottom-line {
-            animation: up-rotate 0.6s ease-out both;
+
+        .mainBlock-video-fon img {
+            width: 100%;
+            object-fit: contain;
+            height: 100%;
         }
+
+        .mainBlock-video-phone {
+            width: 320px;
+            height: 550px;
+            object-fit: contain;
+            pointer-events: none;
+            border-radius: 12px;
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .header-logo {
+            position: relative;
+            z-index: 1002;
+        }
+
+        .mainBlock-video-preview {
+            width: 257px;
+            height: 535px;
+            transform: translate(32px, 10px);
+            z-index: 5;
+            object-fit: cover;
+            border-radius: 41px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .mainBlock-video iframe, .mainBlock-video video {
+            width: 257px;
+            height: 536px;
+            transform: translate(32px, 7px);
+            display: block;
+            position: relative;
+            z-index: 5;
+            border-radius: 50px;
+            object-fit: cover;
+        }
+
+        .burger {
+            position: relative;
+            z-index: 1004;
+            @media (min-width: 1000px) {
+                display: none;
+            }
+
+            svg {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        #top-line,
+        #bottom-line,
         #middle-line {
-            animation: hide 0.6s ease-out forwards;
-        }
-    }
-    @keyframes hide {
-        29% {
-            opacity: 1;
-        }
-        30% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 0;
-        }
-    }
-    @keyframes up-rotate {
-        0% {
-            animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
-            transform: translateY(0px);
-        }
-        30% {
+            transform-box: fill-box;
             transform-origin: center;
-            animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
-            transform: translateY(-10px);
         }
-        100% {
-            transform-origin: center;
-            transform: translateY(-10px) rotate(45deg) scale(0.9);
-        }
-    }
 
-    @keyframes down-rotate {
-        0% {
-            animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
-            transform: translateY(0px);
-        }
-        30% {
-            transform-origin: center;
-            animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
-            transform: translateY(10px);
-        }
-        100% {
-            transform-origin: center;
-            transform: translateY(10px) rotate(-45deg) scale(0.9);
-        }
-    }
+        .burger.active svg {
+            #top-line {
+                animation: down-rotate 0.6s ease-out both;
+            }
 
-    section{
-        margin: 90px 0;
+            #bottom-line {
+                animation: up-rotate 0.6s ease-out both;
+            }
 
-    }
-    section h2{
-        margin-bottom: 30px;
-    }
+            #middle-line {
+                animation: hide 0.6s ease-out forwards;
+            }
+        }
 
-    h2{
-        font-size: 44px;
-        font-weight: 500;
-        text-align: center;
-    }
-</style>
+        @keyframes hide {
+            29% {
+                opacity: 1;
+            }
+            30% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes up-rotate {
+            0% {
+                animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+                transform: translateY(0px);
+            }
+            30% {
+                transform-origin: center;
+                animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+                transform: translateY(-10px);
+            }
+            100% {
+                transform-origin: center;
+                transform: translateY(-10px) rotate(45deg) scale(0.9);
+            }
+        }
+
+        @keyframes down-rotate {
+            0% {
+                animation-timing-function: cubic-bezier(0.16, -0.88, 0.97, 0.53);
+                transform: translateY(0px);
+            }
+            30% {
+                transform-origin: center;
+                animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+                transform: translateY(10px);
+            }
+            100% {
+                transform-origin: center;
+                transform: translateY(10px) rotate(-45deg) scale(0.9);
+            }
+        }
+        body{
+            max-height: 100vh;
+        }
+
+        section {
+            margin: 90px 0;
+            position: relative;
+            .container, h2{
+                position: relative;
+                z-index: 5;
+            }
+        }
+        section:after{
+            content: '';
+            width: 1200px;
+            height: 1200px;
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            transform: translateY(-50%);
+            pointer-events: none;
+            display: block;
+            right: -100px;
+            background: radial-gradient(circle, #38a8ef 0%, rgba(0,212,255,0) 50%);
+            filter: blur(50px);
+            opacity: .4;
+        }
+        section:nth-child(2n):after {
+            right: initial;
+            left: 0;
+        }
+
+        section h2 {
+            margin-bottom: 30px;
+            @media (max-width: 500px) {
+                margin-bottom: 15px;
+            }
+        }
+
+        h2 {
+            font-size: clamp(24px, 5vw, 44px);
+            font-weight: 500;
+            text-align: center;
+        }
+        h2 span{
+            background: #38a8ef;
+            color: #fff;
+            padding: 4px 10px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+    </style>
 <body>
 <div class="header">
     <div class="container">
@@ -466,12 +520,12 @@
                 </svg>
             </div>
             <script>
-                const burger = document.querySelector('.burger')
-                const nav = document.querySelector('.header-nav')
-                burger.addEventListener('click', function () {
-                  this.classList.toggle('active')
-                  nav.classList.toggle('active')
-                })
+              const burger = document.querySelector('.burger')
+              const nav = document.querySelector('.header-nav')
+              burger.addEventListener('click', function () {
+                this.classList.toggle('active')
+                nav.classList.toggle('active')
+              })
             </script>
         </div>
     </div>
@@ -540,6 +594,7 @@
             video.src = './images/IMG_5066.MP4';
             video.autoplay = true;
             video.muted = true;
+            video.loop = true
             video.playsInline = true;
             video.controls = true;
             video.poster = './images/mainVideoPreview.jpg';
@@ -564,7 +619,7 @@
         </script>
     </div>
 
-    <script >
+    <script>
       const head = document.querySelector('head');
       const link = document.createElement('link');
       link.rel = 'stylesheet';
@@ -666,7 +721,9 @@
                 <div class="whatGet-el">
                     <div class="whatGet-tag-sec">Урок 1</div>
                     <div class="whatGet-title">Генерация идей и сценариев</div>
-                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с ChatGPT.</div>
+                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с
+                        ChatGPT.
+                    </div>
                     <div class="whatGet-tag">Ты научишься:</div>
                     <ul>
                         <li>Генерировать идеи и сценарии</li>
@@ -678,7 +735,9 @@
                 <div class="whatGet-el">
                     <div class="whatGet-tag-sec">Урок 1</div>
                     <div class="whatGet-title">Генерация идей и сценариев</div>
-                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с ChatGPT.</div>
+                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с
+                        ChatGPT.
+                    </div>
                     <div class="whatGet-tag">Ты научишься:</div>
                     <ul>
                         <li>Генерировать идеи и сценарии</li>
@@ -690,7 +749,9 @@
                 <div class="whatGet-el">
                     <div class="whatGet-tag-sec">Урок 1</div>
                     <div class="whatGet-title">Генерация идей и сценариев</div>
-                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с ChatGPT.</div>
+                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с
+                        ChatGPT.
+                    </div>
                     <div class="whatGet-tag">Ты научишься:</div>
                     <ul>
                         <li>Генерировать идеи и сценарии</li>
@@ -703,7 +764,9 @@
                 <div class="whatGet-el">
                     <div class="whatGet-tag-sec">Урок 1</div>
                     <div class="whatGet-title">Генерация идей и сценариев</div>
-                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с ChatGPT.</div>
+                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с
+                        ChatGPT.
+                    </div>
                     <div class="whatGet-tag">Ты научишься:</div>
                     <ul>
                         <li>Генерировать идеи и сценарии</li>
@@ -716,7 +779,9 @@
                 <div class="whatGet-el">
                     <div class="whatGet-tag-sec">Урок 1</div>
                     <div class="whatGet-title">Генерация идей и сценариев</div>
-                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с ChatGPT.</div>
+                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с
+                        ChatGPT.
+                    </div>
                     <div class="whatGet-tag">Ты научишься:</div>
                     <ul>
                         <li>Генерировать идеи и сценарии</li>
@@ -728,7 +793,9 @@
                 <div class="whatGet-el">
                     <div class="whatGet-tag-sec">Урок 1</div>
                     <div class="whatGet-title">Генерация идей и сценариев</div>
-                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с ChatGPT.</div>
+                    <div class="whatGet-txt">Быстро придумывай креативные концепции и описания для AI-анимации с
+                        ChatGPT.
+                    </div>
                     <div class="whatGet-tag">Ты научишься:</div>
                     <ul>
                         <li>Генерировать идеи и сценарии</li>
@@ -737,6 +804,69 @@
                     </ul>
                     <img src="./images/whatGet_1.png" alt="">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2>Ты освоишь <span>6 ключевых AI-инструментов</span><br/> с обратной связью от преподавателя по<br/> каждому уроку – в игровом формате!</h2>
+            <div class="skills-wrp">
+                <div class="skills-el">
+                    <div class="skills-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28" data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}"> <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1" font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2" d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path> <defs></defs> </svg>
+                    </div>
+                    <div>
+                        <b>Midjourney + ChatGPT –</b>
+                        идеи и визуалы
+                    </div>
+                </div>
+                <div class="skills-el">
+                    <div class="skills-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28" data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}"> <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1" font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2" d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path> <defs></defs> </svg>
+                    </div>
+                    <div>
+                        <b>Midjourney + ChatGPT –</b>
+                        идеи и визуалы
+                    </div>
+                </div>
+                <div class="skills-el">
+                    <div class="skills-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28" data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}"> <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1" font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2" d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path> <defs></defs> </svg>
+                    </div>
+                    <div>
+                        <b>Midjourney + ChatGPT –</b>
+                        идеи и визуалы
+                    </div>
+                </div>
+                <div class="skills-el">
+                    <div class="skills-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28" data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}"> <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1" font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2" d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path> <defs></defs> </svg>
+                    </div>
+                    <div>
+                        <b>Midjourney + ChatGPT –</b>
+                        идеи и визуалы
+                    </div>
+                </div>
+                <div class="skills-el">
+                    <div class="skills-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28" data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}"> <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1" font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2" d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path> <defs></defs> </svg>
+                    </div>
+                    <div>
+                        <b>Midjourney + ChatGPT –</b>
+                        идеи и визуалы
+                    </div>
+                </div>
+                <div class="skills-el">
+                    <div class="skills-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="5925.31591796875 5185.18408203125 20 28" data-guides="{&quot;vertical&quot;:[],&quot;horizontal&quot;:[]}"> <path fill="none" stroke="white" fill-opacity="1" stroke-width="2" stroke-opacity="1" font-size-adjust="none" stroke-linecap="round" id="tSvg16877b1a03c" title="Path 2" d="M 5931.760229473684 5208.415010526315 C 5934.130616140351 5208.415010526315 5936.501002807017 5208.415010526315 5938.871389473684 5208.415010526315M 5932.649119473685 5211.184210526315 C 5934.426909473684 5211.184210526315 5936.204699473684 5211.184210526315 5937.982489473684 5211.184210526315M 5927.315789473684 5195.491900526315 C 5927.315789473684 5190.903690526315 5930.897509473684 5187.184210526315 5935.315789473684 5187.184210526315C 5939.734089473684 5187.184210526315 5943.315789473684 5190.903690526315 5943.315789473684 5195.491900526315C 5943.315789473684 5197.823310526315 5942.390989473684 5199.930510526315 5940.901489473684 5201.439310526315C 5940.243289473684 5202.106110526315 5939.7601894736845 5202.973810526315 5939.7601894736845 5203.928710526315C 5939.7601894736845 5204.877010526315 5939.019989473684 5205.645710526315 5938.106789473684 5205.645710526315C 5936.246119473684 5205.645710526315 5934.385449473684 5205.645710526315 5932.524779473684 5205.645710526315C 5931.611609473684 5205.645710526315 5930.871349473684 5204.877010526315 5930.871349473684 5203.928710526315C 5930.871349473684 5202.973810526315 5930.388339473684 5202.106110526315 5929.7300894736845 5201.439310526315C 5928.240619473684 5199.930510526315 5927.315789473684 5197.823410526315 5927.315789473684 5195.491900526315Z"></path> <defs></defs> </svg>
+                    </div>
+                    <div>
+                        <b>Midjourney + ChatGPT –</b>
+                        идеи и визуалы
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
