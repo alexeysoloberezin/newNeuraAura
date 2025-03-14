@@ -5,15 +5,29 @@
   background: #0a2639;
 }
 .swiper-button-next, .swiper-button-prev{
-  background: #fff;
+  background: #38a8ef;
   border-radius: 50%;
   width: 42px !important;
   height: 42px !important;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 0 10px #38a8ef;
+  opacity: 0.9;
+}
+@media (min-width: 1000px) {
+  .swiper-button-next:hover, .swiper-button-prev:hover{
+    opacity: 1;
+  }
 }
 .swiper-button-next:after, .swiper-button-prev:after{
-  font-size: 22px !important;
-  color: #000 !important;
+  font-size: 20px !important;
+  font-weight: 600;
+  color: #fff !important;
+}
+@media (max-width: 1000px) {
+  .swiper-button-next, .swiper-button-prev{
+    width: 37px !important;
+    height: 37px !important;
+    opacity: 1 !important;
+  }
 }
 .speed-item{
   display: grid;
@@ -149,6 +163,7 @@
   gap: 20px;
   margin-top: 50px;
 }
+
 .skills-el{
   display: flex;
   align-items: center;
@@ -175,7 +190,23 @@
   object-fit: contain;
   max-height: 100%;
 }
-
+@media (max-width: 1000px) {
+  .skills-wrp{
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+  }
+  .skills-el{
+    font-size: 16px;
+  }
+  .skills-el b{
+    font-size: 17px;
+  }
+}
+@media (max-width: 650px) {
+  .skills-wrp{
+    grid-template-columns: 1fr;
+  }
+}
 .where{
   position: relative;
   z-index: 10;
@@ -227,6 +258,23 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   margin-top: 30px;
+}
+@media (max-width: 1000px) {
+  .where-wrp{
+    grid-template-columns: 1fr;
+    margin-top: 15px;
+    gap: 10px;
+  }
+  .where{
+    padding-top: 35px;
+    padding-bottom: 15px;
+  }
+  .examples{
+    margin-bottom: 0;
+  }
+  .where-el{
+    padding: 15px;
+  }
 }
 .where-el ul li{
   margin-bottom: 7px;
@@ -296,6 +344,7 @@
   row-gap: 50px;
   margin-top: 50px;
 }
+
 .howStart-el{
   background: #fff;
   border-radius: 15px;
@@ -333,6 +382,26 @@
   text-align: center;
   justify-content: center;
 }
+@media (max-width: 1000px) {
+  .howStart-wrp{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .howStart-title{
+    font-size: 21px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  .howStart-wrp{
+    row-gap: 30px;
+    grid-template-columns: 1fr;
+  }
+  .howStart-el img{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
 .faq-box{
   display: flex;
   flex-direction: column;
@@ -369,6 +438,7 @@
   height: 36px;
   background: #38a8ef;
   transform: rotate(45deg);
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -379,4 +449,20 @@
 }
 .faq-item.active .faq-item-body{
   display: block;
+}
+@media (max-width: 1000px) {
+  .faq-item-body{
+    font-size: 15px;
+  }
+  .faq-item-close{
+    width: 28px;
+    height: 28px;
+  }
+ .faq-item-head{
+   padding: 14px;
+   font-size: 16px;
+ }
+ footer{
+   font-size: 14px;
+ }
 }
