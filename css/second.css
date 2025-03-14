@@ -4,6 +4,17 @@
   padding: 50px;
   background: #0a2639;
 }
+.swiper-button-next, .swiper-button-prev{
+  background: #fff;
+  border-radius: 50%;
+  width: 42px !important;
+  height: 42px !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.13);
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+  font-size: 22px !important;
+  color: #000 !important;
+}
 .speed-item{
   display: grid;
   margin-bottom: 10px;
@@ -166,6 +177,8 @@
 }
 
 .where{
+  position: relative;
+  z-index: 10;
   color: #000;
   background: #fff;
   padding: 60px 0;
@@ -275,4 +288,95 @@
   border-radius: 12px;
   height: 100%;
   object-fit: cover;
+}
+.howStart-wrp{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 50px;
+  margin-top: 50px;
+}
+.howStart-el{
+  background: #fff;
+  border-radius: 15px;
+}
+.howStart-title{
+  color: #226e9e;
+  font-weight: 600;
+  max-width: 67%;
+  margin: 12px auto;
+  text-align: center;
+  font-size: 24px;
+}
+.howStart-el{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 15px;
+}
+.howStart-el img{
+  width: 200px;
+  margin: 10px auto;
+  aspect-ratio: 1/1;
+}
+.howStart-number{
+  width: 60px;
+  height: 50px;
+  background: #226e9e;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  margin: -25px auto 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.faq-box{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item{
+  background: #072940;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+}
+.faq-item-head{
+  padding: 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+}
+.faq-item-body{
+  display: none;
+}
+.faq-item-close img{
+  max-width: 80%;
+}
+.faq-item-body{
+  padding: 0 40px 30px 20px;
+  font-size: 17px;
+}
+.faq-item-close{
+  width: 36px;
+  height: 36px;
+  background: #38a8ef;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.faq-item.active .faq-item-close{
+  transform: rotate(0);
+}
+.faq-item.active .faq-item-body{
+  display: block;
 }

@@ -7,6 +7,9 @@
     <title>Neuro Aura</title>
     <!--    <meta de>-->
     <style>
+        html,body{
+            scroll-behavior: smooth;
+        }
         body {
             background: #021c27;
             color: #fff;
@@ -343,6 +346,10 @@
         .header-logo {
             position: relative;
             z-index: 1002;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #38a8ef;
         }
 
         .mainBlock-video-preview {
@@ -505,10 +512,10 @@
                 NEURO AURA
             </div>
             <ul class="header-nav">
-                <li><a href="#">Программа обучения</a></li>
-                <li><a href="#">Отзывы</a></li>
-                <li><a href="#">Как проходит обучение</a></li>
-                <li><a href="#">Тарифы</a></li>
+                <li><a class="goTo" href="#sec1">Программа обучения</a></li>
+                <li><a class="goTo" href="#sec2">Отзывы</a></li>
+                <li><a class="goTo" href="#sec3">Как проходит обучение</a></li>
+                <li><a class="goTo" href="#sec4">Тарифы</a></li>
             </ul>
             <div class="burger">
                 <svg id="hamburger" class="Header__toggle-svg" viewbox="0 0 60 40">
@@ -627,7 +634,7 @@
       head.appendChild(link);
     </script>
 
-    <section class="speed">
+    <section id="sec1" class="speed">
         <div class="container">
             <h2>Как AI ускоряет работу дизайнеров</h2>
 
@@ -713,7 +720,7 @@
         </div>
     </section>
 
-    <section class="whatGet">
+    <section id="sec2" class="whatGet">
         <div class="container">
             <h2>Чему ты научишься за 14 дней?</h2>
 
@@ -808,7 +815,7 @@
         </div>
     </section>
 
-    <section class="skills">
+    <section id="sec3" class="skills">
         <div class="container">
             <h2>Ты освоишь <span>6 ключевых AI-инструментов</span><br/> с обратной связью от преподавателя по<br/> каждому уроку – в игровом формате!</h2>
             <div class="skills-wrp">
@@ -871,7 +878,7 @@
         </div>
     </section>
 
-    <div class="where">
+    <div id="sec4" class="where">
         <div class="container">
             <h2>Где ты сможешь применять AI-дизайн и сколько это приносит?</h2>
             <div class="where-wrp">
@@ -1024,14 +1031,17 @@
                           loop: true,
                           slidesPerView: 4, // Позволяет отображать количество слайдов в зависимости от их ширины
                           spaceBetween: 20,
-
+                          preventClicks: false, // Отключаем автоматический переход по клику
+                          preventClicksPropagation: false,
                           pagination: {
                             el: '.swiper-pagination',
                             clickable: true,
                           },
+
                           navigation: {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
+                            clickable: true,
                           },
                         });
                       };
@@ -1045,6 +1055,138 @@
         </div>
     </div>
 
+    <section class="howStart">
+        <div class="container">
+            <h2>Как проходит обучение</h2>
+            <div class="howStart-wrp">
+                <div class="howStart-el">
+                    <div class="howStart-number">1</div>
+                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
+                    <img src="./images/whatGet_1.png" alt="">
+                </div>
+                <div class="howStart-el">
+                    <div class="howStart-number">2</div>
+                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
+                    <img src="./images/whatGet_1.png" alt="">
+                </div>
+                <div class="howStart-el">
+                    <div class="howStart-number">3</div>
+                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
+                    <img src="./images/whatGet_1.png" alt="">
+                </div>
+                <div class="howStart-el">
+                    <div class="howStart-number">4</div>
+                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
+                    <img src="./images/whatGet_1.png" alt="">
+                </div>
+                <div class="howStart-el">
+                    <div class="howStart-number">5</div>
+                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
+                    <img src="./images/whatGet_1.png" alt="">
+                </div>
+                <div class="howStart-el">
+                    <div class="howStart-number">6</div>
+                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
+                    <img src="./images/whatGet_1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-box">
+
+            </div>
+            <script>
+              const faq = [
+                {
+                  title: "Подойдёт ли этот курс для абсолютных новичков?",
+                  text: "Да, конечно. Мы специально разработали программу таким образом, чтобы любой человек без базовых знаний смог шаг за шагом освоить основы работы с искусственным интеллектом и научился создавать качественный визуальный контент. Обучение начинается с самых элементарных инструментов и постепенно усложняется."
+                },
+                {
+                  title: "Нужен ли специальный софт или мощный компьютер?",
+                  text: "Для большинства уроков достаточно обычного ноутбука или даже смартфона, поскольку мы используем инструменты, работающие прямо в браузере. Если в дальнейшем вы захотите углубиться в профессиональные программы, мы расскажем, как подобрать оптимальный комплект оборудования и софта."
+                },
+                {
+                  title: "Сколько времени в день нужно выделять на обучение?",
+                  text: "В среднем достаточно 1–2 часов в сутки, если вы хотите последовательно выполнять домашние задания и закреплять материал на практике. Если же у вас меньше свободного времени, можно заниматься в более гибком режиме — платформа доступна 24/7."
+                },
+                {
+                  title: "Предоставляете ли вы рассрочку или скидки на оплату курса?",
+                  text: "Да, мы предлагаем несколько вариантов оплаты, включая рассрочку без переплат и различные скидки для постоянных учеников, студентов и групп. Точные условия и актуальные акции уточняйте у менеджера или смотрите на странице оплаты."
+                },
+                {
+                  title: "Когда начинаются занятия и где проходят уроки?",
+                  text: "Обучение стартует регулярно — вы можете присоединиться к потоку практически в любое время. Все занятия проходят в онлайн-формате, что позволяет учиться из любой точки мира. После регистрации вы получите доступ к личному кабинету с видеолекциями и домашними заданиями."
+                },
+                {
+                  title: "Будет ли возможность получить сертификат по окончании курса?",
+                  text: "После успешного завершения всех модулей и сдачи итогового проекта вы получите именной сертификат, подтверждающий полученные знания. Он может пригодиться для портфолио или при трудоустройстве."
+                },
+                {
+                  title: "Насколько сложным будет обучение, если я никогда не сталкивался с дизайном или AI?",
+                  text: "Мы стремимся максимально упростить процесс освоения материала, разбивая его на маленькие блоки. Каждый урок сопровождается примерами и пошаговыми инструкциями. Даже если вы не имеете опыта, у вас будет достаточно пояснений, чтобы уверенно двигаться вперёд."
+                },
+                {
+                  title: "Предусмотрена ли обратная связь от преподавателей и кураторов?",
+                  text: "Да, безусловно. У нас есть система обратной связи: вы можете задавать вопросы под каждым уроком, получать комментарии к выполненным заданиям и общаться с другими участниками в чатах. При необходимости организуем индивидуальную консультацию."
+                },
+                {
+                  title: "Что делать, если я не успеваю или хочу пройти курс быстрее?",
+                  text: "Программа гибкая — вы можете проходить уроки в комфортном для вас темпе. Если нужно затормозить или, наоборот, ускориться, вы легко подстроите график. Просто предупредите об этом куратора, и мы поможем скорректировать процесс."
+                },
+                {
+                  title: "Смогу ли я зарабатывать на этом после окончания курса?",
+                  text: "Наша цель — не просто научить вас инструментам, но и показать, как применить их на практике. Вы получите кейсы, примеры реальных проектов и советы по поиску клиентов или оформлению портфолио. Многие выпускники уже успешно работают как фрилансеры или в штате компаний."
+                }
+              ];
+              const faqBlock = document.querySelector('.faq-box')
+              const createFaqBlock = () => {
+                const template = (title, text) => {
+                  return `<div class="faq-item">
+                    <div class="faq-item-head">
+                        <div>${title}</div>
+                        <div class="faq-item-close"><img src="./images/close.svg" alt=""></div>
+                    </div>
+                    <div class="faq-item-body">
+                        ${text}
+                    </div>
+                </div>`
+                }
+
+
+                faq.forEach(item => {
+                  faqBlock.insertAdjacentHTML('beforeend', template(item.title, item.text))
+                })
+
+                const els = document.querySelectorAll('.faq-item')
+                els.forEach(el => {
+                  el.addEventListener('click', function (){
+                    this.classList.toggle('active')
+                  })
+                })
+              }
+
+              createFaqBlock()
+            </script>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            © Все права защищены <br/>
+            Контакты: <br/>
+            Фактический адрес: Красногорск, Большая Воскресенска, 1 к.1 оф.112 <br/>
+            Номер телефона: +79638375815 <br/>
+            Электронная почта: academy@illustrator-school.ru <br/>
+            <br/>
+            Реквизиты: <br/>
+            ИП Машошин Данила Евгеньевич <br/>
+            ИНН 253611291003 /ОГНИП 322253600007311 <br/>
+        </div>
+    </footer>
     <br><br>
 </div>
 </body>
