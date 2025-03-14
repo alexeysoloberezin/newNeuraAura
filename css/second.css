@@ -12,6 +12,9 @@
   box-shadow: 0 0 10px #38a8ef;
   opacity: 0.9;
 }
+.instSwiper .swiper-button-next, .instSwiper  .swiper-button-prev{
+  top: 220px !important;
+}
 @media (min-width: 1000px) {
   .swiper-button-next:hover, .swiper-button-prev:hover{
     opacity: 1;
