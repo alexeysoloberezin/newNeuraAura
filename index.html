@@ -982,6 +982,8 @@
                         // Удаляем превью
                         console.log('examplesSwiper', examplesSwiper)
                         if (swiperPreview) swiperPreview.remove();
+
+                        return
                         if (instSwiper) {
                           instSwiper.insertAdjacentHTML('beforeend', `
                           <div class="swiper inst-swiper">
