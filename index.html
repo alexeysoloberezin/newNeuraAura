@@ -566,7 +566,7 @@
             <div class="tag">
                 Мини-курс “Нейростети для дизайна”
             </div>
-            <h1>Начни зарабатывать
+            <h1 id="title">Начни зарабатывать
                 на AI-дизайне уже через
                 48 часов
             </h1>
@@ -968,6 +968,9 @@
 
                   body.addEventListener('scroll', function () {
                     if (!swiperInitialized) {
+                      const title = document.getElementById('title')
+                      title.innerHTML = 'TEST'
+
                       // Добавляем CSS
                       const link = document.createElement('link');
                       link.rel = 'stylesheet';
@@ -980,7 +983,6 @@
                       script.onload = () => {
                         // Удаляем превью
                         console.log('examplesSwiper', examplesSwiper)
-                        return
                         if (swiperPreview) swiperPreview.remove();
 
                         if (instSwiper) {
