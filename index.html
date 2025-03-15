@@ -1173,48 +1173,42 @@
                         });
 
 
-                        const wherePreview = document.querySelectorAll('.where-preview');
+                        document.addEventListener('pointerdown', function (e) {
+                          const preview = e.target.closest('.where-preview img');
 
-                        wherePreview.forEach(el => {
-                          el.addEventListener('click', function (e) {
-                            const vidSrc = e.target.getAttribute('data-video'); // Получаем src видео
+                          const pauseAllVideosExcept = (currentVideo) => {
+                            const allVideos = document.querySelectorAll('video');
+                            allVideos.forEach(video => {
+                              if (video !== currentVideo) {
+                                video.pause();
+                              }
+                            });
+                          };
+
+                          if (preview) {
+                            const vidSrc = preview.getAttribute('data-video');
                             const videoElement = document.createElement('video');
                             videoElement.src = vidSrc;
                             videoElement.controls = true;
                             videoElement.autoplay = true;
-                            videoElement.style.width = '100%'; // Или другой стиль по необходимости
+                            videoElement.style.width = '100%';
 
-                            // Получаем родительский контейнер перед удалением элемента
-                            const parentContainer = el.parentNode;
+                            videoElement.addEventListener('play', () => pauseAllVideosExcept(videoElement));
 
-                            // Удаляем текущий элемент
-                            el.remove();
-
-                            // Вставляем видео в родительский контейнер
+                            const parentContainer = preview.closest('.where-img');
                             if (parentContainer) {
+                              preview.remove();
                               parentContainer.appendChild(videoElement);
                             }
-                          });
+                          }
+
+                          // Если клик по видео или его управлению
+                          const clickedVideo = e.target.closest('video');
+                          if (clickedVideo) {
+                            pauseAllVideosExcept(clickedVideo);
+                          }
                         });
 
-                        // const videos = document.querySelectorAll('.where-img video')
-                        // console.log('videos', videos)
-                        // if (videos.length) {
-                        //   videos.forEach(video => {
-                        //     video.addEventListener('click', function (e) {
-                        //       e.stopPropagation()
-                        //       e.play()
-                        //     })
-                        //     video.addEventListener('play', function() {
-                        //       videos.forEach(otherVideo => {
-                        //         console.log('otherVideo', otherVideo)
-                        //         if (otherVideo !== video) {
-                        //           otherVideo.pause();
-                        //         }
-                        //       });
-                        //     });
-                        //   });
-                        // }
 
                         const examplesVideo = document.querySelectorAll('.examples-swiper video')
                         if(examplesVideo.length){
