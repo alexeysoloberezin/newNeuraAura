@@ -967,7 +967,6 @@
                   const body = document.querySelector('body')
 
                   body.addEventListener('scroll', function () {
-                    console.log('scroll');
                     if (!swiperInitialized) {
                       // Добавляем CSS
                       const link = document.createElement('link');
@@ -983,7 +982,6 @@
                         console.log('examplesSwiper', examplesSwiper)
                         if (swiperPreview) swiperPreview.remove();
 
-                        return
                         if (instSwiper) {
                           instSwiper.insertAdjacentHTML('beforeend', `
                           <div class="swiper inst-swiper">
