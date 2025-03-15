@@ -989,7 +989,9 @@
                               <div class="swiper-slide examples-slide">
                                 <div class="where-el">
                                     <div class="where-img">
-                                        <video controls src="./images/how_1.mp4"></video>
+                                        <div class="where-preview">
+                                            <img data-video="./images/how_1.mp4" src="./images/ws_1.png" alt="">
+                                        </div>
                                     </div>
                                     <div class="where-title">
                                         Рекламные AI-видеоролики
@@ -1016,7 +1018,9 @@
                              <div class="swiper-slide examples-slide">
                                 <div class="where-el">
                                     <div class="where-img">
-                                        <video controls src="./images/how_2.mp4"></video>
+                                        <div class="where-preview">
+                                            <img data-video="./images/how_2.mp4" src="./images/ws_2.png" alt="">
+                                        </div>
                                     </div>
                                     <div class="where-title">
                                         AI-арт и иллюстрации
@@ -1043,7 +1047,9 @@
                              <div class="swiper-slide examples-slide">
                                 <div class="where-el">
                                     <div class="where-img">
-                                        <video controls src="./images/how_3.mp4"></video>
+                                        <div class="where-preview">
+                                            <img data-video="./images/how_3.mp4" src="./images/ws_3.png" alt="">
+                                        </div>
                                     </div>
                                     <div class="where-title">
                                          AI-генерация брендинга и фирменного стиля
@@ -1158,24 +1164,49 @@
                           },
                         });
 
-                        const videos = document.querySelectorAll('.where-img video')
-                        console.log('videos', videos)
-                        if (videos.length) {
-                          videos.forEach(video => {
-                            video.addEventListener('click', function (e) {
-                              e.stopPropagation()
-                              e.play()
-                            })
-                            video.addEventListener('play', function() {
-                              videos.forEach(otherVideo => {
-                                console.log('otherVideo', otherVideo)
-                                if (otherVideo !== video) {
-                                  otherVideo.pause();
-                                }
-                              });
-                            });
+
+                        const wherePreview = document.querySelectorAll('.where-preview');
+
+                        wherePreview.forEach(el => {
+                          el.addEventListener('click', function (e) {
+                            const vidSrc = e.target.getAttribute('data-video'); // Получаем src видео
+                            const videoElement = document.createElement('video');
+                            videoElement.src = vidSrc;
+                            videoElement.controls = true;
+                            videoElement.autoplay = true;
+                            videoElement.style.width = '100%'; // Или другой стиль по необходимости
+
+                            // Получаем родительский контейнер перед удалением элемента
+                            const parentContainer = el.parentNode;
+
+                            // Удаляем текущий элемент
+                            el.remove();
+
+                            // Вставляем видео в родительский контейнер
+                            if (parentContainer) {
+                              parentContainer.appendChild(videoElement);
+                            }
                           });
-                        }
+                        });
+
+                        // const videos = document.querySelectorAll('.where-img video')
+                        // console.log('videos', videos)
+                        // if (videos.length) {
+                        //   videos.forEach(video => {
+                        //     video.addEventListener('click', function (e) {
+                        //       e.stopPropagation()
+                        //       e.play()
+                        //     })
+                        //     video.addEventListener('play', function() {
+                        //       videos.forEach(otherVideo => {
+                        //         console.log('otherVideo', otherVideo)
+                        //         if (otherVideo !== video) {
+                        //           otherVideo.pause();
+                        //         }
+                        //       });
+                        //     });
+                        //   });
+                        // }
 
                         const examplesVideo = document.querySelectorAll('.examples-swiper video')
                         if(examplesVideo.length){
