@@ -12,6 +12,9 @@
   box-shadow: 0 0 10px #38a8ef;
   opacity: 0.9;
 }
+.instSwiper{
+  margin-top: 20px;
+}
 .instSwiper .swiper-button-next, .instSwiper  .swiper-button-prev{
   top: 220px !important;
 }
@@ -19,6 +22,9 @@
   .swiper-button-next:hover, .swiper-button-prev:hover{
     opacity: 1;
   }
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+  display: none !important;
 }
 .swiper-button-next:after, .swiper-button-prev:after{
   font-size: 20px !important;
@@ -232,9 +238,9 @@
 .where-img{
   border-radius: 15px;
   overflow: hidden;
-  height: 400px;
+  aspect-ratio: 2/3;
 }
-.where-img img{
+.where-img img, .where-img video{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -243,6 +249,7 @@
   text-align: center;
   margin: 15px 0;
   font-size: 18px;
+  min-height: 43px;
   font-weight: 500;
 }
 .where-tag{
