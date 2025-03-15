@@ -968,16 +968,21 @@
 
                   body.addEventListener('scroll', function () {
                     if (!swiperInitialized) {
-                      const title = document.getElementById('title')
-                      title.innerHTML = 'TEST'
+                      const lazyImgs = document.querySelectorAll('.lazy-img');
+                      if (lazyImgs.length) {
+                        lazyImgs.forEach(img => {
+                          const src = img.getAttribute('data-lazy-src');
+                          if (src) {
+                            img.setAttribute('src', src);
+                          }
+                        });
+                      }
 
-                      // Добавляем CSS
                       const link = document.createElement('link');
                       link.rel = 'stylesheet';
                       link.href = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css';
                       document.head.appendChild(link);
 
-                      // Добавляем JS
                       const script = document.createElement('script');
                       script.src = 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js';
                       script.onload = () => {
@@ -1244,7 +1249,7 @@
             <h2>Твой проводник <br/>в мир AI-дизайна</h2>
             <div class="profile">
                 <div class="profile__photo">
-                    <img src="./images/profile.jpg" alt="Халимончук Алена">
+                    <img class="lazy-img" data-lazy-src="./images/profile.jpg" src="" alt="Халимончук Алена">
                 </div>
                 <div>
                     <div class="profile__name">Халимончук Алена</div>
