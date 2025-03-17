@@ -571,7 +571,18 @@
 .profile__highlight {
   font-size: 18px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
+}
+.profile__highlight:before{
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
 }
 @media (max-width: 1000px) {
   .profile__highlight{
