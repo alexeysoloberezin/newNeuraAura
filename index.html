@@ -759,7 +759,7 @@
                             <li>Писать промпты для точных результатов</li>
                         </ul>
                     </div>
-                    <img class="lazy-img" data-lazy-src="./images/whatGet_1.png" src="" alt="">
+                    <img class="lazy-img" data-lazy-src="./images/les/le_1.jpg" src="" alt="">
                 </div>
 
                 <div class="whatGet-el">
@@ -774,7 +774,7 @@
                             <li>Настраивать стиль и формат AI-картинок</li>
                         </ul>
                     </div>
-                    <img class="lazy-img" data-lazy-src="./images/whatGet_2.png" src="" alt="">
+                    <img class="lazy-img" data-lazy-src="./images/les/le_2.jpg" src="" alt="">
                 </div>
 
                 <div class="whatGet-el">
@@ -789,7 +789,7 @@
                             <li>Настраивать скорость и стиль анимации</li>
                         </ul>
                     </div>
-                    <img class="lazy-img" data-lazy-src="./images/whatGet_3.png" src="" alt="">
+                    <img class="lazy-img" data-lazy-src="./images/les/le_3.jpg" src="" alt="">
                 </div>
 
                 <div class="whatGet-el">
@@ -804,7 +804,7 @@
                             <li>Создавай уникальные визуальные стили</li>
                         </ul>
                     </div>
-                    <img class="lazy-img" data-lazy-src="./images/whatGet_4.png" src="" alt="">
+                    <img class="lazy-img" data-lazy-src="./images/les/le_4.jpg" src="" alt="">
                 </div>
 
                 <div class="whatGet-el">
@@ -818,7 +818,7 @@
                            <li>Создавать AI-музыку</li>
                        </ul>
                    </div>
-                    <img class="lazy-img" data-lazy-src="./images/whatGet_5.png" src="" alt="">
+                    <img class="lazy-img" data-lazy-src="./images/les/le_5.jpg" src="" alt="">
 
                 </div>
 
@@ -833,7 +833,7 @@
                             <li>Подготовить ролик для портфолио</li>
                         </ul>
                     </div>
-                    <img class="lazy-img" data-lazy-src="./images/whatGet_6.png" src="" alt="">
+                    <img class="lazy-img" data-lazy-src="./images/les/le_6.jpg" src="" alt="">
                 </div>
             </div>
         </div>
@@ -1001,37 +1001,46 @@
                 <div class="howStart-el">
                     <div class="howStart-number">1</div>
                     <div class="howStart-title">Оплачиваешь доступ к курсу</div>
-                    <img src="./images/whatGet_1.png" alt="">
+                    <img src="./images/zz/f_1.png" style="transform: scale(1.1);margin-top: -10px" alt="">
                 </div>
                 <div class="howStart-el">
                     <div class="howStart-number">2</div>
-                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
-                    <img src="./images/whatGet_1.png" alt="">
+                    <div class="howStart-title">Получаешь доступ к курсу на электронную почту</div>
+                    <img src="./images/zz/f_2.png" alt="">
                 </div>
                 <div class="howStart-el">
                     <div class="howStart-number">3</div>
-                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
-                    <img src="./images/whatGet_1.png" alt="">
+                    <div class="howStart-title">Смотришь уроки на нашей платформе</div>
+                    <img src="./images/zz/f_3.png" alt="">
                 </div>
                 <div class="howStart-el">
                     <div class="howStart-number">4</div>
-                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
-                    <img src="./images/whatGet_1.png" alt="">
+                    <div class="howStart-title">Выполняешь домашки под каждым уроком</div>
+                    <img src="./images/zz/f_4.png" alt="">
                 </div>
                 <div class="howStart-el">
                     <div class="howStart-number">5</div>
-                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
-                    <img src="./images/whatGet_1.png" alt="">
+                    <div class="howStart-title">Получаешь обратную связь от преподавателя</div>
+                    <img src="./images/zz/f_5.png" alt="">
                 </div>
                 <div class="howStart-el">
                     <div class="howStart-number">6</div>
-                    <div class="howStart-title">Оплачиваешь доступ к курсу</div>
-                    <img src="./images/whatGet_1.png" alt="">
+                    <div class="howStart-title">Общаешься с единомышленниками</div>
+                    <img src="./images/zz/f_6.png" alt="">
                 </div>
             </div>
         </div>
     </section>
 
+
+    <section class="reviews">
+        <div class="container">
+            <h2>Отзывы</h2>
+            <div class="reviews-swiper">
+
+            </div>
+        </div>
+    </section>
 
     <section class="faq">
         <div class="container">
@@ -1134,6 +1143,8 @@
   const swiperPreview = document.querySelector('.examples-swiper-preview');
   const examplesSwiper = document.querySelector('.examples-swiper');
   const instSwiper = document.querySelector('.instSwiper')
+  const reviewsSwiper = document.querySelector('.reviews-swiper')
+
   const body = document.querySelector('body')
 
   body.addEventListener('scroll', function () {
@@ -1421,6 +1432,138 @@ Digital-контент для <br/> брендов и компаний
               </div>
             `);
         }
+
+        if(reviewsSwiper){
+          reviewsSwiper.insertAdjacentHTML('beforeend', `
+              <div class="swiper reviews-swiper-box">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                        <div>
+                            <div class="review-slide-name">Сергей, 31 лет</div>
+                            <div class="review-slide-text">
+                                "Честно, я думал, что это будет сложняк какой-то, но оказалось, что вообще не так. Всё просто, понятное объяснение, никаких заморочек. Теперь для бизнеса делаю крутые видео и контент 🔥."
+                            </div>
+                        </div>
+                        <div><img class="reviews-slide-image" src="./images/reviews/rev_2.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Марина, 32 года</div>
+                                <div class="review-slide-text">
+                                "Я думала, что такие вещи только для профессионалов, а тут прям доступно и понятно всё. Уроки прям по делу, без воды. Теперь делаю стильный контент для соцсетей, и это кайф! 💡"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_3.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide reviews-slide">
+                    <div class="reviews-slide-item">
+                        <div>
+                                <div class="review-slide-name">Анна, 22 лет</div>
+                                <div class="review-slide-text">
+                                    "Я реально не думала, что смогу создать такие крутые картинки и видео! После курса всё стало понятно, реально всё просто. Всё объясняется без лишней воды. Спасибо, Ана, за то, что показала, как это реально сделать! 🙌 Теперь могу гордиться контентом, который сама сделала!"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_1.jpg" alt=""></div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Александр, 29 лет</div>
+                                <div class="review-slide-text">
+                                "Записался на курс, чтобы что-то новое выучить, и не зря! Всё просто объяснялось, и результат был сразу виден. Я вообще не дизайнер, но теперь делаю крутые анимации для блога. В целом, круто! 🎥"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_4.jpg" alt=""></div>
+                        </div>
+                    </div>
+                      <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">
+                                Виктор, 28 лет
+</div>
+                                <div class="review-slide-text">
+                                "Никогда не думал, что смогу сам делать такие вещи! Курс реально крутой, всё объясняется пошагово, и результат просто потрясный! Уже создаю контент для инсты а. Всё супер! 👏
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_6.jpg" alt=""></div>
+                        </div>
+                    </div>
+                      <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Екатерина, 27 лет</div>
+                                <div class="review-slide-text">
+                                "Я думала, что это слишком сложно для меня, но курс оказался реальным лайфхаком! Всё объясняется доступно, и теперь я сама делаю крутые визуалы 😍. Спасибо тебе, Ана!"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_8.jpg" alt=""></div>
+                        </div>
+                    </div>
+                      <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Ольга, 31 год</div>
+                                <div class="review-slide-text">
+                                "Я всегда считала, что для таких вещей надо специалистов звать, а теперь сама могу сделать качественный контент для Instagram! 🍽📸 Всё так просто и круто!"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_7.jpg" alt=""></div>
+                        </div>
+                    </div>
+                     <div class="swiper-slide reviews-slide">
+                        <div class="reviews-slide-item">
+                            <div>
+                                <div class="review-slide-name">Светлана, 26 лет</div>
+                                <div class="review-slide-text">
+                                "Я раньше считала, что такое только для профессионалов, но теперь сама делаю крутые фото и видео. Ана, ты меня реально вдохновила! 😎🎨"
+                                </div>
+                            </div>
+                            <div><img class="reviews-slide-image" src="./images/reviews/rev_5.jpg" alt=""></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                 <div class="swiper-pagination swiper-pagination-rev"></div>
+                    <div class="swiper-button-prev swiper-button-prev-rev"></div>
+                    <div class="swiper-button-next swiper-button-next-rev"></div>
+              </div>
+               `)
+        }
+
+        new Swiper('.reviews-swiper-box', {
+          slidesPerView: 3, // Позволяет отображать количество слайдов в зависимости от их ширины
+          spaceBetween: 20,
+          preventClicks: false, // Отключаем автоматический переход по клику
+          preventClicksPropagation: false,
+          autoHeight: true,
+          breakpoints: {
+            // Когда ширина экрана меньше 768px (мобильные устройства)
+            0: {
+              slidesPerView: 1,
+            },
+            // Когда ширина экрана от 768px до 1024px (планшеты)
+            768: {
+              slidesPerView: 2,
+            },
+            // Когда ширина экрана больше 1024px (десктоп)
+            1024: {
+              slidesPerView: 2,
+            }
+          },
+          navigation: {
+            nextEl: '.swiper-button-next-rev',
+            prevEl: '.swiper-button-prev-rev',
+            clickable: true,
+          },
+        });
 
         new Swiper('.inst-swiper', {
           slidesPerView: 3, // Позволяет отображать количество слайдов в зависимости от их ширины
