@@ -2,9 +2,74 @@
     position: relative;
     border-radius: 20px;
     padding: 50px;
+    overflow: hidden;
     background: #0a2639;
+    background: linear-gradient(
+            135deg,
+            #02131e 10%,
+            rgba(3, 94, 255, 0.08) 30%,
+            #071e2e 70%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(56, 168, 239, 0.1);
 }
+.speed-hand{
+    position: absolute;
+    bottom: -70px;
+    opacity: 0.7;
+    left: -25px;
+    pointer-events: none;
+    max-width: 220px;
+}
+.whatGet-fon{
+    position: absolute;
+    bottom: -150px;
+    right: -200px;
+}
+@media (max-width: 600px) {
+    .whatGet-fon{
+        right: 50%;
+        bottom: -120px;
+        transform: translateX(50%);
+    }
+    .whatGet-fon img{
+        max-width: 140vw;
 
+    }
+}
+.whatGet-el{
+    position: relative;
+    z-index: 4;
+}
+.whatGet-el.isBlack{
+    background: linear-gradient(
+            135deg,
+            #02131e 10%,
+            rgba(3, 94, 255, 0.08) 30%,
+            #071e2e 70%
+    );
+    color: #fff;
+    box-shadow: 0 0 20px rgba(56, 168, 239, 0.17);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+}
+.whatGet-el.isBlue{
+    background: linear-gradient(
+            135deg,
+            rgba(11, 72, 108, 0.8) 10%,
+            rgba(56, 168, 239, 0.8) 30%,
+            rgba(56, 168, 239, 0.8) 70%
+    );
+    color: #fff;
+    box-shadow: 0 0 20px rgba(56, 168, 239, 0.17);
+    border: 1px solid #38a8ef;
+    backdrop-filter: blur(8px);
+}
+.whatGet-el.isBlue ul li:before{
+    background: #fff;
+}
+.whatGet-el.isBlue .whatGet-tag{
+    background: #38a8ef;
+}
 .swiper-button-next, .swiper-button-prev {
     background: #38a8ef;
     border-radius: 50%;
@@ -74,19 +139,35 @@
     }
 
     .speed-item {
-        display: flex;
-        flex-wrap: wrap;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 18px;
+        /*display: flex;*/
+        /*flex-wrap: wrap;*/
+        grid-template-columns: 2fr 60px 70px;
+        gap: 5px;
+        /*border-bottom: 1px solid rgba(255, 255, 255, 0.1);*/
+        font-size: 16px;
         padding-bottom: 15px;
+    }
+    .speed-item .time{
+        font-size: 12px;
     }
 
     .speed-item > div:first-child {
         width: 100%;
     }
 
-    .speed-item:first-child {
-        display: none;
+    /*.speed-item:first-child {*/
+    /*    display: none;*/
+    /*}*/
+}
+@media (max-width: 450px) {
+    .speed-item{
+        font-size: 14px;
+    }
+    .speed-item:nth-child(1){
+        font-size: 16px !important;
+    }
+    .speed-box{
+        padding: 15px;
     }
 }
 
@@ -237,6 +318,10 @@
     aspect-ratio: 16/7;
 }
 
+.skills{
+    position: relative;
+    z-index: 5;
+}
 .skills-wrp {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -507,6 +592,12 @@
     margin: 10px auto;
     aspect-ratio: 1/1;
 }
+@media (max-width: 700px) {
+    .howStart-el img{
+        width: 150px;
+        transform: scale(1) !important;
+    }
+}
 
 .howStart-number {
     width: 60px;
@@ -557,8 +648,15 @@
     background: #072940;
     color: #fff;
     cursor: pointer;
+    box-shadow: 0 0 20px rgba(56, 168, 239, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.13);
     border-radius: 12px;
+    background: linear-gradient(
+            135deg,
+            #02131e 10%,
+            rgba(3, 94, 255, 0.08) 30%,
+            #071e2e 70%
+    );
 }
 
 .faq-item-head {
@@ -625,7 +723,7 @@
 
 
 .profile {
-    background-color: #06333a;
+    background: #06333a;
     color: white;
     padding: 20px 30px;
     border-radius: 15px;
@@ -633,6 +731,12 @@
     grid-template-columns: 40% 1fr;
     margin: 20px auto 0;
     gap: 30px;
+    background: linear-gradient(
+            135deg,
+            #02131e 10%,
+            rgb(21, 40, 78) 30%,
+            #071e2e 70%
+    );
 }
 
 .profile__photo {
@@ -827,6 +931,24 @@
     grid-template-columns: 1fr 130px;
     gap: 20px;
     /*box-shadow: 0 0 10px #035aff;*/
+}
+@media (max-width: 500px) {
+    .review-slide-name{
+        font-size: 23px;
+    }
+    .review-slide-text{
+        font-size: 15px;
+    }
+    .reviews-slide-item{
+        display: flex;
+        flex-direction: column-reverse;
+        padding-left: 20px;
+        gap: 0;
+    }
+    .reviews-slide-image{
+        margin-bottom: -40px;
+        max-width: 220px;
+    }
 }
 
 .reviews-slide:nth-child(2n - 1) .reviews-slide-item {
