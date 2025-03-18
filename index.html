@@ -525,6 +525,7 @@
             padding: 4px 10px;
             display: inline-block;
             border-radius: 10px;
+            backdrop-filter: blur(5px);
         }
     </style>
 <body>
@@ -618,6 +619,7 @@
           window.addEventListener('load', function () {
             const el = document.getElementById('video-play');
             const videoContainer = document.getElementById('videoContainer');
+            const body = document.body
 
             const video = document.createElement('video');
             video.src = './images/example.MOV';
@@ -634,6 +636,16 @@
                 videoContainer.append(video);
                 video.play().catch(error => console.log('Autoplay blocked:', error));
               }, 1500);
+
+              function checkScroll() {
+                if ((body.scrollTop || document.documentElement.scrollTop) > 1000) {
+                  console.log("Скролл больше 1000px, останавливаем видео");
+                  video.pause(); // Останавливаем видео
+                  body.removeEventListener('scroll', checkScroll); // Удаляем слушатель
+                }
+              }
+
+              body.addEventListener('scroll', checkScroll);
 
               videoContainer.insertAdjacentHTML('beforeend', `
         <div class="mainBlock-video-fon">
@@ -659,7 +671,7 @@
     <section id="sec1" class="speed">
         <div class="container">
             <h2>Как AI ускоряет работу дизайнеров</h2>
-
+            <img src="./images/it_1.png" class="it it_1"  alt="">
             <div class="speed-box">
                 <div class="speed-item">
                     <div>Задача</div>
@@ -739,8 +751,7 @@
                     <div class="time">1 час</div>
                 </div>
 
-                <img src="./images/hadn.svg" class="speed-hand" alt="">
-
+                <img src=""  data-lazy-src="./images/hadn.svg" class="speed-hand lazy-img" alt="">
             </div>
         </div>
     </section>
@@ -957,6 +968,7 @@
             </div>
         </div>
 
+
         <div class="container">
             <div class="examples">
                 <h2>Примеры работ спикеров</h2>
@@ -970,6 +982,8 @@
                         <div></div>
                     </div>
                 </div>
+                <img src="./images/it_3.png" class="it it_2" alt="">
+
             </div>
         </div>
 
@@ -1007,6 +1021,8 @@
     <section class="howStart">
         <div class="container">
             <h2>Как проходит обучение</h2>
+            <img src="./images/it_2.png" class="it it_4" alt="">
+
             <div class="howStart-wrp">
                 <div class="howStart-el">
                     <div class="howStart-number">1</div>
@@ -1049,6 +1065,8 @@
             <div class="reviews-swiper">
 
             </div>
+            <img src="./images/it_4.png" class="it it_3" alt="">
+
         </div>
     </section>
 
@@ -1527,7 +1545,7 @@ Digital-контент для <br/> брендов и компаний
                      <div class="swiper-slide reviews-slide">
                         <div class="reviews-slide-item">
                             <div>
-                                <div class="review-slide-name">Светлана, 26 лет</div>
+                                <div class="review-slide-name">Светлана, 24 лет</div>
                                 <div class="review-slide-text">
                                 "Я раньше считала, что такое только для профессионалов, но теперь сама делаю крутые фото и видео. Ана, ты меня реально вдохновила! 😎🎨"
                                 </div>

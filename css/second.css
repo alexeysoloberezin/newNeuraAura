@@ -21,6 +21,71 @@
     pointer-events: none;
     max-width: 220px;
 }
+@media (max-width: 500px) {
+    .speed-hand{
+        max-width: 180px;
+    }
+}
+
+.it{
+    position: absolute;
+    z-index: 0;
+
+}
+@media (max-width: 800px) {
+    .it{
+        display: none;
+    }
+}
+.it_1{
+    top: 0;
+    opacity: 1;
+    left: -80px;
+}
+.it_2{
+    left: -100px;
+    bottom: -100px;
+    animation: rotate 55s infinite;
+}
+.it_3{
+    right: -160px;
+    bottom: -100px;
+    animation: xx 3.5s infinite;
+}
+.it_4{
+    left: -50px;
+    bottom: -80px;
+    animation: xx 3.5s infinite;
+    animation-delay: .8s;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+        filter: blur(0px);
+    }
+    100%{
+        transform: rotate(360deg);
+        filter: blur(2px);
+    }
+}
+@keyframes xx {
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(7px);
+    }
+    40%{
+        transform: translateY(00px);
+    }
+    80%{
+        transform: translateY(-7px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
 .whatGet-fon{
     position: absolute;
     bottom: -150px;
@@ -511,6 +576,7 @@
 }
 
 .examples {
+    position: relative;
     margin: 40px 0;
 }
 
@@ -883,7 +949,9 @@
         opacity: 0;
     }
 }
-
+.reviews .container{
+    position: relative;
+}
 .reviews-swiper {
 }
 
