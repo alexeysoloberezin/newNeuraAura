@@ -132,6 +132,11 @@
         .header {
             padding: 20px 0;
         }
+        @media (max-width: 500px) {
+            .header{
+                padding: 5px 0 12px;
+            }
+        }
 
         .header-row {
             display: flex;
@@ -184,7 +189,7 @@
             border-style: solid;
             transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
             @media (max-width: 500px) {
-                font-size: 16px;
+                font-size: 15px;
             }
         }
 
@@ -192,7 +197,7 @@
             padding-top: 70px;
             position: relative;
             @media (max-width: 750px) {
-                padding-top: 30px;
+                padding-top: 0px;
             }
         }
 
@@ -202,6 +207,11 @@
 
         .mainBlock .btn {
             margin-top: 30px;
+        }
+        @media (max-width: 600px) {
+            .mainBlock .btn{
+                margin-top: 14px;
+            }
         }
 
         .mainBlock h1 {
@@ -215,7 +225,7 @@
         }
 
         .mainBlock-wrp .tag {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .mainBlock-wrp {
@@ -311,8 +321,8 @@
             }
             @media (max-width: 750px) {
                 position: relative;
-                margin: 20px auto;
-                transform: translateX(20px) scale(0.85);
+                margin: -20px auto;
+                transform: translateX(20px) scale(0.75);
             }
         }
 
@@ -557,6 +567,26 @@
                 this.classList.toggle('active')
                 nav.classList.toggle('active')
               })
+
+              document.querySelectorAll('.goTo').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                  console.log('ckiuc')
+                  e.preventDefault(); // Предотвращаем стандартное поведение ссылки
+
+                  const targetId = this.getAttribute('href');
+                  const targetElement = document.querySelector(targetId);
+
+                  if (targetElement) {
+                    nav.classList.remove('active')
+                    burger.classList.remove('active')
+                    console.log('nav', nav)
+                    targetElement.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }
+                });
+              });
             </script>
         </div>
     </div>
@@ -756,7 +786,7 @@
         </div>
     </section>
 
-    <section id="sec2" class="whatGet">
+    <section id="sec3" class="whatGet">
         <div class="container">
             <h2>Чему ты научишься за 14 дней?</h2>
 
@@ -860,7 +890,7 @@
         </div>
     </section>
 
-    <section id="sec3" class="skills">
+    <section  class="skills">
         <div class="container">
             <h2>Ты освоишь <span>6 ключевых AI-инструментов</span><br/> с обратной связью от преподавателя по<br/>
                 каждому уроку – в игровом формате!</h2>
@@ -1059,7 +1089,7 @@
     </section>
 
 
-    <section class="reviews">
+    <section class="reviews" id="sec2">
         <div class="container">
             <h2>Отзывы</h2>
             <div class="reviews-swiper">
